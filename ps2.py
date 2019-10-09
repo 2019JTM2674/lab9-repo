@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#Program to make an application to handle student's results
 #Creation of class Student
 class Student:
     def __init__(self,name,roll):
@@ -12,9 +13,12 @@ class Student_Base:
         self.roll=roll
         
     #Add new student 
-    def addNewStudent(self,new_nmae):
-        pass
-        
+    def addNewStudent(self,new_name):
+        self.new_name=new_name
+        #creating instance of Student object
+        n1=Student(self.new_name,self.roll)
+        print(n1.__dict__)
+        print("Student added successfully")
         
     #Update total marks   
     def displayMarks(self):
@@ -23,6 +27,7 @@ class Student_Base:
     #Display total marks\n   
     def updateMarks(self,update_marks):
         print("Total marks of student with roll no.{} is {}".format(self.roll,Student_Base.totalMarks))
+        #updating marks
         Student_Base.totalMarks=update_marks
         print("Updated marks of student with roll no.{} is {}".format(self.roll,Student_Base.totalMarks))
 
@@ -33,17 +38,19 @@ while 1:
     user=int(input("Enter\n1.Admin\n2.Student "))
 
     #User Validation
-    if user == 1:
+    if user == 1:                                                  #Admin validation
         password=input("Enetr Password ")
         flag=1
         if password == "iitd_1234":
             print("Admin login sucessfull")
-    elif user == 2:
+            #Student Validation
+    elif user == 2:                                                 
         stu_roll = input("Enter Roll no ")
         if stu_roll == "25":
             print("Student login sucessfull")
             s1=Student_Base(stu_roll)
-            s1.displayMarks()
+            #Display Student Marks
+            s1.displayMarks()                                      
     
     #Functionality for admin
     if flag == 1:
@@ -72,7 +79,7 @@ while 1:
 
 
 
-
+    #Asking to exit or continue 
     x=int(input("Enetr 1 to exit and 2 to continue\n"))
     if x==1:
         break
