@@ -42,12 +42,12 @@ while 1:
         password=input("Enetr Password ")
         flag=1
         if password == "iitd_1234":
-            print("Admin login sucessfull")
+            print("Admin login succesfull")
             #Student Validation
     elif user == 2:                                                 
         stu_roll = input("Enter Roll no ")
         if stu_roll == "25":
-            print("Student login sucessfull")
+            print("Student login succesfull")
             s1=Student_Base(stu_roll)
             #Display Student Marks
             s1.displayMarks()                                      
